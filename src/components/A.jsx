@@ -6,7 +6,7 @@ export const A = () => {
     const dispatch = useDispatch();
     const handleClick = () => {
         const name = nameRef.current.value;
-        
+        dispatch({type:"NAME_UPDATE",payload: name})
     }
   return (
     <div>

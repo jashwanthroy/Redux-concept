@@ -1,14 +1,14 @@
 "use client"
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import { useDispatch } from 'react-redux';
 export const B = () => {
-    const locRef = useRef();
+  const dispatch = useDispatch();
+  const [loc, setLoc] = useState();
     const handleClick = () => {
-        
+        dispatch({type:"LOC_UPDATE",payload:loc})
     }
     const handleChange = (eve) => {
-        const loc = eve.target.value;
-        locRef.current = loc;
+        setLoc(eve.target.value)
     }
   return (
     <div>
